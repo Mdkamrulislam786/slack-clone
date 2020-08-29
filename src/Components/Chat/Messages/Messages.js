@@ -1,18 +1,18 @@
 import React from "react";
 import "./Message.css";
 
-const Messages = ({ message, timeStamp, user, userImg }) => {
+const Messages = ({ message, timestamp, user, userImage }) => {
   return (
     <div className="messages">
-      <img src={userImg} alt="img" />
+      <img src={userImage} alt="" />
       <div className="messages__info">
         <h4>
           {user}{" "}
-          <span className="message__timeStamp">
-            {new Date(timeStamp?.toDate()).toUTCString()}
-          </span>{" "}
+          <span className="message__timestamp">
+            {new Date(timestamp?.toDate()).toUTCString()}
+          </span>
         </h4>
-        <p> {message} </p>
+        <p>{message}</p>
       </div>
     </div>
   );

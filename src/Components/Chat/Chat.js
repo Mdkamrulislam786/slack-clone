@@ -6,6 +6,7 @@ import StarBorderOutLinedIcon from "@material-ui/icons/StarBorderOutlined";
 import InfoOutLinedIcon from "@material-ui/icons/InfoOutlined";
 import db from "../../firebase";
 import Messages from "./Messages/Messages";
+import ChatInput from "./ChatInput/ChatInput";
 
 const Chat = () => {
   const { roomId } = useParams();
@@ -18,6 +19,7 @@ const Chat = () => {
         .doc(roomId)
         .onSnapshot((snapshot) => setRoomDetails(snapshot.data()));
     }
+
     db.collection("rooms")
       .doc(roomId)
       .collection("messages")
@@ -27,8 +29,8 @@ const Chat = () => {
       );
   }, [roomId]);
 
-  console.log(roomDetails);
-  console.log("messages>>>>", roomMeassages);
+  // console.log(roomDetails);
+  // console.log("messages>>>>", roomMeassages);
 
   //1.ChangesUrl 2.connects To the database 3.uses urlParams {roomId} to fetch from the database
 
@@ -48,16 +50,17 @@ const Chat = () => {
         </div>
       </div>
       <div className="chat__messages">
-        {roomMeassages.map(({ message, timestamp, user, userImg }, index) => (
+        {roomMeassages.map(({ message, timestamp, user, userImage }, index) => (
           <Messages
             key={index}
             message={message}
-            timeStamp={timestamp}
+            timestamp={timestamp}
             user={user}
-            userImg={userImg}
+            userImage={userImage}
           />
         ))}
       </div>
+      <ChatInput channelName={roomDetails?.name} channelId={roomId} />
     </div>
   );
 };

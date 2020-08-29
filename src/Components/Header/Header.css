@@ -14,7 +14,7 @@
     margin-left: 20px;
 }
 
-.header__left > .MuiSvgIcon-root {
+.header__left>.MuiSvgIcon-root {
     margin-left: auto;
     margin-right: 30px;
 }
@@ -42,7 +42,33 @@
     display: flex;
     align-items: flex-end;
 }
-.header__right > .MuiSvgIcon-root{
+
+.header__right>.MuiSvgIcon-root {
     margin-left: auto;
     margin-right: 20px;
+}
+
+@media (min-width:320px) and (max-width:480px) {
+    .header {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px !important;
+
+    }
+
+
+    .header__search {
+        padding: 2px !important;
+        margin-right: 10px !important;
+
+    }
+    .header__right{
+        display: none;
+    }
+
+    .chatInput>form>input {
+        padding: 15px !important;
+        width: 50% !important;
+    }
 }

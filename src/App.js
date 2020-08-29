@@ -10,7 +10,7 @@ import Chat from "./Components/Chat/Chat";
 import Login from "./Components/Login/Login";
 
 function App() {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
 
   return (
     <div className="app">
@@ -30,7 +30,7 @@ function App() {
                   <Chat />
                 </Route>
                 <Route path="/">
-                  <h2>Welcome</h2>
+                  <h2 className="welcome">Welcome To Slack</h2>
                 </Route>
               </Switch>
             </div>
