@@ -30,7 +30,7 @@ function App() {
                   <Chat />
                 </Route>
                 <Route path="/">
-                  <h2 className="welcome">Welcome To Slack</h2>
+                  <h1 className="welcome">Welcome To Slack</h1>
                 </Route>
               </Switch>
             </div>

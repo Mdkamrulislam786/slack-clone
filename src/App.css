@@ -7,10 +7,7 @@ body {
     height: 100vh;
 }
 
-.app__body .welcome {
-    display: grid;
-    place-items: center;
-    text-align: center;
-    color: indigo;
 
+.app__body>.welcome {
+    color: indigo;
 }
